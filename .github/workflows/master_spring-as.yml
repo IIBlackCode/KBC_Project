@@ -20,14 +20,16 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: '8'
+         
+      - name: Build with Maven
+        # run: mvn clean install
+        # run: mvn --batch-mode --update-snapshots package
+      - run: cp /home/runner/work/KBC_Project/KBC_Project/kbc_mall/pom.xml ~/.m2/settings.xml
+        shell: bash
       
       - name: Standard Checkout
         uses: actions/checkout@v2
-      
-      - name: Build with Maven
-        run: mvn clean install
-        # run: mvn --batch-mode --update-snapshots package
-
+        
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
