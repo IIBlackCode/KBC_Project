@@ -30,6 +30,10 @@ jobs:
         with:
           name: java-app
           path: '${{ github.workspace }}/target/*.war'
+          
+      - name: Standard Checkout
+        uses: actions/checkout@v2
+
 
   deploy:
     runs-on: ubuntu-latest
