@@ -24,6 +24,8 @@ jobs:
         # run: mvn clean install
       - run: cp /home/runner/work/KBC_Project/KBC_Project/kbc_mall/pom.xml ~/.m2/settings.xml
         shell: bash
+      - run: cat ~/.m2/settings.xml
+        shell: bash
         
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots package
